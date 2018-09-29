@@ -1,5 +1,5 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import {Helmet} from 'react-helmet'
 
 const HomePage = () => {
   const content = {
@@ -9,7 +9,7 @@ const HomePage = () => {
 
   return [
     <Helmet>
-      <meta name="description" content={content.article} />
+      <meta name="description" content={content.article}/>
     </Helmet>,
     <main className="p-home">
       <h3 className="p-home__title">{content.title}</h3>

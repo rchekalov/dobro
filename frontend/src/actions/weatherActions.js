@@ -19,7 +19,7 @@ export const getWeather = () => async dispatch => {
   try {
     const response = await weatherApi.getWeather(request)
     dispatch(showWeather(response))
-  } catch(e) {
+  } catch (e) {
     console.error(e)
   }
 }

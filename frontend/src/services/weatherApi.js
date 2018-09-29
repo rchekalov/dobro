@@ -1,4 +1,5 @@
 import ApiBook from 'api-book'
+
 const headers = {
   'Content-Type': 'text/plain;charset=UTF-8'
 }
@@ -19,15 +20,18 @@ const book = {
     options: options
   }
 }
+
 function statusMiddleware(response) {
   if (response.status > 399) {
     throw response
   }
   return response
 }
+
 function toJsonMiddleware(response) {
   return response.json()
 }
+
 const Apis = new ApiBook.ApiCreator(book, {
   host: 'https://query.yahooapis.com',
   fetchAndThen: [statusMiddleware, toJsonMiddleware]

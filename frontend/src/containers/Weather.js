@@ -1,6 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
 import * as weatherActions from '../actions/weatherActions'
 
 class Weather extends React.Component {
@@ -31,12 +31,12 @@ class Weather extends React.Component {
   }
 
   Button() {
-    const { loading } = this.props.weatherState
+    const {loading} = this.props.weatherState
     return loading ? this.Spinner() : <button onClick={this.handleClick.bind(this)}>Click Me!</button>
   }
 
   Information() {
-    const { city, temp, date, text } = this.props.weatherState
+    const {city, temp, date, text} = this.props.weatherState
     return (
       <div>
         <h4>
@@ -54,7 +54,7 @@ class Weather extends React.Component {
 
   render() {
     return <div>
-      {this.hasLoaded() ? this.Button() : this.Information() }
+      {this.hasLoaded() ? this.Button() : this.Information()}
     </div>
   }
 }
