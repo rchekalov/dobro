@@ -58,7 +58,6 @@ class MessageViewSet(viewsets.ModelViewSet):
             except ValueError:
                 return Response(status=status.HTTP_404_NOT_FOUND)
             else:
-
                 queryset = queryset.filter(dialog=dialog_uuid)
                 page = self.paginate_queryset(queryset)
                 if page is not None:
