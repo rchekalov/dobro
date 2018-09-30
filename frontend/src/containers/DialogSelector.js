@@ -3,6 +3,16 @@ import {connect} from 'react-redux'
 import Chat from '../components/Chat/Chat'
 import {getDialogsList, selectedDialog} from '../actions/dialogsActions';
 
+const colors = {
+    'Кошмары': "#967b0021",
+    'Отношения': "#43960036",
+    'Проблемы в семье': "#96000033",
+    'Секс': "#00964136",
+    'Одиночество': "#008a9636",
+    'Кибербуллинг': "#31009636",
+    'Суицид': "#96008636"
+}
+
 class DialogSelector extends React.Component {
 
    constructor(props) {
@@ -21,9 +31,12 @@ class DialogSelector extends React.Component {
    }
 
    render() {
-      const dialogs = this.props.dialogs.map((item) => (
-            <div key={item.uuid} onClick={e => this.onDialogClick(e, item)} className={item.uuid == this.props.selectedDialog ? 'selected' : ''}>
-               {item.uuid}
+      const dialogs = this.props.dialogs.map((item, index) => (
+            <div key={item.uuid} 
+                 onClick={e => this.onDialogClick(e, item)} 
+                 className={item.uuid == this.props.selectedDialog ? 'selected' : ''}
+                 style={{background: colors[item.theme]}}>
+               <span>{item.theme || 'в процессе...'}</span>
             </div>
          )
       )

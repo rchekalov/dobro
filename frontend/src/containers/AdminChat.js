@@ -37,7 +37,7 @@ class ChatContainer extends React.Component {
 
   render() {
       return (
-         <Chat messages={this.props.messages} isFetching={this.props.isFetching} sender={1}/>
+         <Chat messages={this.props.messages} isFetching={this.props.isFetching} sender={1} dialog={this.props.dialog}/>
       )
   }
 }
