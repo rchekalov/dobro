@@ -1,0 +1,83 @@
+/* BEM naming: component - button */
+
+.loading-indicator
+   width: 100px;
+   margin: 0 auto;
+
+.chat-wrapper
+   width: 100%;
+   height: 100%;
+   border: 1px solid #009688;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   background: #00968821;
+
+   .messages-wrapper
+      height: 100%;
+      overflow: auto;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #009688;
+
+      .message
+         width: 100%;
+         display: flex;
+         color: black;
+
+      .message-conent
+         height: max-content;
+         border: 1px solid #00bcd45c;
+         border-radius: 15px;
+         width: max-content;
+         padding: 0 10px;
+         padding: 10px;
+         margin: 7px 7px 0;
+         max-width: 70%;
+         background: white;
+         word-break: break-all;
+         box-shadow: 1px 1px 5px 0px #00bcd43d;
+
+      .align-right
+         justify-content: flex-end;
+
+         .message-conent
+            background: #2196f34a;
+
+   .message-input
+      height: 50px;
+      display: flex;
+
+      textarea 
+         width: 100%;
+         margin-left: 1px;
+         resize: none;
+         outline: none;
+         border-bottom-left-radius: 10px;
+         border: none;
+         padding: 5px 10px;
+      input
+         width: 50px;
+         font-size: 20px;
+         border-radius: 0;
+         border-bottom-right-radius: 10px;
+         border: none;
+         border-left: 1px solid #eee;
+
+
+.p-dialogs
+   max-width: unset;
+   display: flex;
+   .dialogs-list
+      width: 400px;
+      margin-right: 10px;
+      div
+         height: 40px;
+         border: 1px solid #00bcd43d;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-top: -1px;
+         cursor: pointer;
+      .selected
+         background: #00968821;
+

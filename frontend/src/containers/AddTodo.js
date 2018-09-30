@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {addTodo} from '../actions/todoActions'
 
 class AddTodo extends React.Component {
   constructor(props) {
@@ -22,7 +21,6 @@ class AddTodo extends React.Component {
     if (!input.trim()) {
       return
     }
-    dispatch(addTodo(input))
     this.setState({input: ''})
   }
 

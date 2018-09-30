@@ -2,11 +2,11 @@ import React from 'react'
 import Header from './Header'
 
 const App = ({children}) =>
-  <div>
-    <Header/>
-    <div>
-      {children}
-    </div>
-  </div>
+   [
+      <Header/>,
+      <div className="app-wrapper">
+         {children}
+      </div>
+   ]
 
 export default App

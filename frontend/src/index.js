@@ -9,14 +9,17 @@ import {configureStore} from './store'
 import registerServiceWorker from './registerServiceWorker'
 import routes from './routes'
 import './styles/main.css'
+import { PersistGate } from 'redux-persist/integration/react'
 
 const state = window.__initialState__ || undefined
-const store = configureStore(hashHistory, state)
+const { store, persistor } = configureStore(hashHistory, state)
 const history = syncHistoryWithStore(hashHistory, store)
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history} routes={routes}/>
+   <Provider store={store}>
+      <PersistGate loading={<div>loading...</div>} persistor={persistor}>
+         <Router history={history} routes={routes}/>
+      </PersistGate>
   </Provider>,
   document.getElementById('root')
 )
