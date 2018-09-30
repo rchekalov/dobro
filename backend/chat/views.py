@@ -24,7 +24,7 @@ class DialogSerializer(serializers.ModelSerializer):
 
 
 class DialogViewSet(viewsets.ModelViewSet):
-    queryset = Dialog.objects.all()
+    queryset = Dialog.objects.all().order_by('-created_at')
     serializer_class = DialogSerializer
 
 
