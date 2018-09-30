@@ -25,15 +25,17 @@ export const sendMessageSuccess = () => {
 export const sendMessage = (message, dialog, sender) => {
    return dispatch => {
       dispatch(sendMessageRequest(message.text, sender));
-
+      const data = {
+         text: message.text,
+         sender
+      }
+      if (dialog) {
+         data.dialog = dialog;
+      }
       return fetch(API.sendMessage(dialog), {
          method: 'POST',
          headers:{'content-type': 'application/json'},
-         body: JSON.stringify({
-            text: message.text,
-            dialog,
-            sender
-         })
+         body: JSON.stringify(data)
       })
       .then(response => {
          response.json().then(data => {
