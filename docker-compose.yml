@@ -9,8 +9,8 @@ services:
     - .:/code
     ports:
     - "8000:8000"
-    node:
-      context: ./frontend
-      dockerfile: Dockerfile
-      ports:
-      - "3000:3000"
+  node:
+    context: ./frontend
+    dockerfile: Dockerfile
+    ports:
+    - "3000:3000"
