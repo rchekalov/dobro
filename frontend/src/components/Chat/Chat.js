@@ -52,7 +52,7 @@ class Chat extends React.Component {
             <div className="messages-wrapper" ref={this.messagesContainer}>
                {isFetching ? <div className="loading-indicator">...loading...</div> : messages}
             </div>
-            <MessageInput onMessageSend={this.onMessageSend} sender={this.props.sender}/>
+            <MessageInput onMessageSend={this.onMessageSend} sender={this.props.sender} dialog={this.props.dialog}/>
          </div>
       )
    }
@@ -61,7 +61,7 @@ class Chat extends React.Component {
 const mapStateToProps = state => {
    const items = state.messages.items || [];
    return {
-      ...state.messages,
+      isFetching: state.messages.isFetching,
       items
    }
 }

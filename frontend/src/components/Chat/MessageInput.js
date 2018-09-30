@@ -56,8 +56,7 @@ class MessageInput extends React.Component {
 const mapStateToProps = state => {
   return {
     isFetching: state.messages.isFetching,
-    isSending: state.messages.isSending,
-    dialog: state.messages.dialog
+    isSending: state.messages.isSending
   }
 }
 
