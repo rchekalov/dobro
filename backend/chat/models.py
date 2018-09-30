@@ -6,6 +6,7 @@ import uuid
 class Dialog(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     created_at = models.DateTimeField(auto_now=True)
+    theme = models.TextField(null=True, blank=True)
 
 
 class Message(models.Model):
