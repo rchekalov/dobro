@@ -13,7 +13,8 @@ const dialogs = (state = {
       case types.GET_DIALOGS_SUCCESS:
          return Object.assign({}, state, {
             isFetching: false,
-            items: action.items
+            items: action.items,
+            selectedDialog: action.items[0].uuid
          })
       case types.GET_DIALOGS_FAILED:
          return Object.assign({}, state, {

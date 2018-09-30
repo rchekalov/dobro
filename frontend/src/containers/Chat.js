@@ -5,6 +5,10 @@ import {getChat} from '../actions/messagesActions';
 
 class ChatContainer extends React.Component {
 
+   state = {
+      interval: null
+   }
+
    componentDidMount() {
       const { dispatch } = this.props;
       if (this.props.dialog) {
