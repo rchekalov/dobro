@@ -17,6 +17,14 @@ class ChatContainer extends React.Component {
       }
    }
 
+   componentDidUpdate(prevProps) {
+      const { dispatch } = this.props;
+      if (prevProps.dialog !== this.props.dialog) {
+         clearInterval(this.state.interval);
+         this.setState({interval: setInterval(this.poll.bind(this), 1000)});
+      }
+   }
+
    poll() {
       const { dispatch } = this.props;
       dispatch(getChat(this.props.dialog, true));
